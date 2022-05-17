@@ -13,7 +13,7 @@ class CustomButton: UIButton {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
-        backgroundColor = .blue
+        backgroundColor = UIColor.systemPurple.withAlphaComponent(0.3)
         layer.cornerRadius = 5
         setHeight(50)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)

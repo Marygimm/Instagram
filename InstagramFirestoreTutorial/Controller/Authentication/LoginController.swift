@@ -11,6 +11,8 @@ class LoginController: UIViewController {
     
     // MARK: - Properties
     
+    private lazy var viewModel = LoginViewModel()
+    
     private lazy var iconImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "Instagram_logo_white"))
         image.contentMode = .scaleAspectFill
@@ -49,6 +51,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationOnbservers()
     }
     
     // MARK: - Actions
@@ -57,6 +60,17 @@ class LoginController: UIViewController {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
         
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        loginButton.isEnabled = viewModel.formIsValid
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
     }
     
     // MARK: - Helpers
@@ -84,4 +98,9 @@ class LoginController: UIViewController {
         
     }
     
+    func configureNotificationOnbservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange(sender:)), for: .editingChanged)
+    }
 }
+
