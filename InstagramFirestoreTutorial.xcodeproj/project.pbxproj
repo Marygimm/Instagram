@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		574DF6D7282E6889005AD278 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574DF6D6282E6889005AD278 /* CustomTextField.swift */; };
 		5776E21A2834518C00B558AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E2192834518C00B558AA /* CustomButton.swift */; };
+		5776E21C283454DC00B558AA /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */; };
 		57AB06FC282D27C1009ADE8B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB06FB282D27C1009ADE8B /* FeedCell.swift */; };
 		57AB06FE282D2961009ADE8B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB06FD282D2961009ADE8B /* Extensions.swift */; };
 		57AB0701282D33E4009ADE8B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB0700282D33E4009ADE8B /* LoginController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		574DF6D6282E6889005AD278 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5776E2192834518C00B558AA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		57AB06FB282D27C1009ADE8B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		57AB06FD282D2961009ADE8B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57AB0700282D33E4009ADE8B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		57FB7288282B0EC100C12FD3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				57FB7274282B0E7800C12FD3 /* ViewController.swift in Sources */,
 				57AB0701282D33E4009ADE8B /* LoginController.swift in Sources */,
 				57AB06FC282D27C1009ADE8B /* FeedCell.swift in Sources */,
+				5776E21C283454DC00B558AA /* AuthenticationViewModel.swift in Sources */,
 				57FB7292282B10E000C12FD3 /* ImageSelectorController.swift in Sources */,
 				57FB7290282B10D300C12FD3 /* SearchController.swift in Sources */,
 				57FB7270282B0E7800C12FD3 /* AppDelegate.swift in Sources */,
