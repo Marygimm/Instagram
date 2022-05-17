@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574DF6D7282E6889005AD278 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574DF6D6282E6889005AD278 /* CustomTextField.swift */; };
+		5776E21A2834518C00B558AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E2192834518C00B558AA /* CustomButton.swift */; };
+		57AB06FC282D27C1009ADE8B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB06FB282D27C1009ADE8B /* FeedCell.swift */; };
+		57AB06FE282D2961009ADE8B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB06FD282D2961009ADE8B /* Extensions.swift */; };
+		57AB0701282D33E4009ADE8B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB0700282D33E4009ADE8B /* LoginController.swift */; };
+		57AB0703282D3401009ADE8B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB0702282D3401009ADE8B /* RegistrationController.swift */; };
 		57FB7270282B0E7800C12FD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB726F282B0E7800C12FD3 /* AppDelegate.swift */; };
 		57FB7272282B0E7800C12FD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7271282B0E7800C12FD3 /* SceneDelegate.swift */; };
 		57FB7274282B0E7800C12FD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7273282B0E7800C12FD3 /* ViewController.swift */; };
 		57FB7277282B0E7800C12FD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FB7275282B0E7800C12FD3 /* Main.storyboard */; };
-		57FB7279282B0E7900C12FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FB7278282B0E7900C12FD3 /* Assets.xcassets */; };
 		57FB727C282B0E7900C12FD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FB727A282B0E7900C12FD3 /* LaunchScreen.storyboard */; };
+		57FB728C282B0F7C00C12FD3 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB728B282B0F7C00C12FD3 /* MainTabController.swift */; };
+		57FB728E282B10CB00C12FD3 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB728D282B10CB00C12FD3 /* FeedController.swift */; };
+		57FB7290282B10D300C12FD3 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB728F282B10D300C12FD3 /* SearchController.swift */; };
+		57FB7292282B10E000C12FD3 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7291282B10E000C12FD3 /* ImageSelectorController.swift */; };
+		57FB7294282B10E900C12FD3 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7293282B10E900C12FD3 /* NotificationsController.swift */; };
+		57FB7296282B10F000C12FD3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7295282B10F000C12FD3 /* ProfileController.swift */; };
+		57FB729C282B14BB00C12FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57FB729B282B14BB00C12FD3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		574DF6D6282E6889005AD278 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5776E2192834518C00B558AA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		57AB06FB282D27C1009ADE8B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		57AB06FD282D2961009ADE8B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		57AB0700282D33E4009ADE8B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		57AB0702282D3401009ADE8B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		57FB726C282B0E7800C12FD3 /* InstagramFirestoreTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestoreTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FB726F282B0E7800C12FD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FB7271282B0E7800C12FD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		57FB7273282B0E7800C12FD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57FB7276282B0E7800C12FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		57FB7278282B0E7900C12FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57FB727B282B0E7900C12FD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FB727D282B0E7900C12FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57FB728B282B0F7C00C12FD3 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		57FB728D282B10CB00C12FD3 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		57FB728F282B10D300C12FD3 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		57FB7291282B10E000C12FD3 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		57FB7293282B10E900C12FD3 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		57FB7295282B10F000C12FD3 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		57FB729B282B14BB00C12FD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57AB06FF282D33D5009ADE8B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				57AB0700282D33E4009ADE8B /* LoginController.swift */,
+				57AB0702282D3401009ADE8B /* RegistrationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		57FB7263282B0E7700C12FD3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +89,74 @@
 		57FB726E282B0E7800C12FD3 /* InstagramFirestoreTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				57FB728A282B0EC500C12FD3 /* Model */,
+				57FB7289282B0EC300C12FD3 /* View */,
+				57FB7288282B0EC100C12FD3 /* ViewModel */,
+				57FB7287282B0EC000C12FD3 /* Controller */,
+				57FB7286282B0EB900C12FD3 /* API */,
+				57FB7283282B0EB100C12FD3 /* Utils */,
+				57FB729B282B14BB00C12FD3 /* Assets.xcassets */,
+				57FB7273282B0E7800C12FD3 /* ViewController.swift */,
 				57FB726F282B0E7800C12FD3 /* AppDelegate.swift */,
 				57FB7271282B0E7800C12FD3 /* SceneDelegate.swift */,
-				57FB7273282B0E7800C12FD3 /* ViewController.swift */,
-				57FB7275282B0E7800C12FD3 /* Main.storyboard */,
-				57FB7278282B0E7900C12FD3 /* Assets.xcassets */,
 				57FB727A282B0E7900C12FD3 /* LaunchScreen.storyboard */,
+				57FB7275282B0E7800C12FD3 /* Main.storyboard */,
 				57FB727D282B0E7900C12FD3 /* Info.plist */,
 			);
 			path = InstagramFirestoreTutorial;
+			sourceTree = "<group>";
+		};
+		57FB7283282B0EB100C12FD3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				57AB06FD282D2961009ADE8B /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		57FB7286282B0EB900C12FD3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		57FB7287282B0EC000C12FD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57AB06FF282D33D5009ADE8B /* Authentication */,
+				57FB728B282B0F7C00C12FD3 /* MainTabController.swift */,
+				57FB728D282B10CB00C12FD3 /* FeedController.swift */,
+				57FB728F282B10D300C12FD3 /* SearchController.swift */,
+				57FB7291282B10E000C12FD3 /* ImageSelectorController.swift */,
+				57FB7293282B10E900C12FD3 /* NotificationsController.swift */,
+				57FB7295282B10F000C12FD3 /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57FB7288282B0EC100C12FD3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		57FB7289282B0EC300C12FD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57AB06FB282D27C1009ADE8B /* FeedCell.swift */,
+				574DF6D6282E6889005AD278 /* CustomTextField.swift */,
+				5776E2192834518C00B558AA /* CustomButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57FB728A282B0EC500C12FD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57FB727C282B0E7900C12FD3 /* LaunchScreen.storyboard in Resources */,
-				57FB7279282B0E7900C12FD3 /* Assets.xcassets in Resources */,
+				57FB729C282B14BB00C12FD3 /* Assets.xcassets in Resources */,
 				57FB7277282B0E7800C12FD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +230,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574DF6D7282E6889005AD278 /* CustomTextField.swift in Sources */,
 				57FB7274282B0E7800C12FD3 /* ViewController.swift in Sources */,
+				57AB0701282D33E4009ADE8B /* LoginController.swift in Sources */,
+				57AB06FC282D27C1009ADE8B /* FeedCell.swift in Sources */,
+				57FB7292282B10E000C12FD3 /* ImageSelectorController.swift in Sources */,
+				57FB7290282B10D300C12FD3 /* SearchController.swift in Sources */,
 				57FB7270282B0E7800C12FD3 /* AppDelegate.swift in Sources */,
+				57FB728E282B10CB00C12FD3 /* FeedController.swift in Sources */,
+				57FB7296282B10F000C12FD3 /* ProfileController.swift in Sources */,
+				57FB728C282B0F7C00C12FD3 /* MainTabController.swift in Sources */,
+				57FB7294282B10E900C12FD3 /* NotificationsController.swift in Sources */,
+				57AB06FE282D2961009ADE8B /* Extensions.swift in Sources */,
 				57FB7272282B0E7800C12FD3 /* SceneDelegate.swift in Sources */,
+				57AB0703282D3401009ADE8B /* RegistrationController.swift in Sources */,
+				5776E21A2834518C00B558AA /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +399,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,6 +428,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
