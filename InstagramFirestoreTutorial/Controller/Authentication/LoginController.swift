@@ -30,7 +30,11 @@ class LoginController: UIViewController {
         return textField
     }()
     
-    private lazy var loginButton = CustomButton(title: "Log in")
+    private lazy var loginButton: UIButton = {
+        let button = CustomButton(title: "Log in")
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
+    }()
     
     private lazy var forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
@@ -62,15 +66,24 @@ class LoginController: UIViewController {
         
     }
     
+    @objc func handleLogin() {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        AuthService.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: failed to log user in\(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
             viewModel.email = sender.text
         } else {
             viewModel.password = sender.text
         }
-        
-        loginButton.isEnabled = viewModel.formIsValid
-        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        updateForm()
     }
     
     // MARK: - Helpers
@@ -104,3 +117,12 @@ class LoginController: UIViewController {
     }
 }
 
+    // MARK: - FormViwModel
+
+extension LoginController: FormViwModel {
+    func updateForm() {
+        loginButton.isEnabled = viewModel.formIsValid
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+    }
+}
