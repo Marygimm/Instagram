@@ -6,22 +6,28 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileHeader: UICollectionReusableView {
     
     // MARK: - Properties
     
+    var viewModel: ProfileHeaderViewModel? {
+        didSet {
+            configure()
+        }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "venom-7")
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .lightGray
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ediit Brock"
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
@@ -144,7 +150,6 @@ class ProfileHeader: UICollectionReusableView {
     // MARK: - Actions
 
     @objc func handleEditProfileFollowTapped() {
-        
     }
     
     // MARK: - Helpers
@@ -153,6 +158,13 @@ class ProfileHeader: UICollectionReusableView {
         let attributedText = NSMutableAttributedString(string: "\(value)\n", attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
         attributedText.append(NSAttributedString(string: label, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray]))
         return attributedText
+    }
+    
+    func configure() {
+        guard let viewModel = viewModel else { return }
+        nameLabel.text = viewModel.fullname
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        
     }
     
 }
