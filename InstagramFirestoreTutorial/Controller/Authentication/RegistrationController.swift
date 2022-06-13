@@ -13,6 +13,7 @@ class RegistrationController: UIViewController {
     
     private lazy var viewModel = RegistrationViewModel()
     private var profileImage: UIImage?
+    weak var delegate: AuthenticationDelegate?
     
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -57,6 +58,7 @@ class RegistrationController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        updateForm()
         configureNotificationOnbservers()
     }
     
@@ -84,9 +86,7 @@ class RegistrationController: UIViewController {
             if let error = error {
                 print("error \(error.localizedDescription)")
             }
-            
-            self.dismiss(animated: true, completion: nil)
-            
+            self.delegate?.authenticationDidCompleted()            
         }
     }
     
@@ -156,7 +156,8 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
         profileImage = selectedImage
-        
+        viewModel.profileImage = profileImage
+        updateForm()
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor

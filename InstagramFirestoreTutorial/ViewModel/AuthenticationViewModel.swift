@@ -42,9 +42,10 @@ struct RegistrationViewModel: AuthenticationViewModel {
     var password: String?
     var fullName: String?
     var username: String?
+    var profileImage: UIImage?
     
     var formIsValid: Bool {
-        guard let emailValue = email, let passwordValue = password, let fullNameValue = fullName, let usernameValue = username else { return false }
+        guard let emailValue = email, let passwordValue = password, let fullNameValue = fullName, let usernameValue = username, let _ = profileImage else { return false }
         return !emailValue.isEmpty && !passwordValue.isEmpty && !fullNameValue.isEmpty && !usernameValue.isEmpty
     }
     
