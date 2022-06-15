@@ -33,23 +33,40 @@ class ProfileController: UICollectionViewController {
         super.viewDidLoad()
         
         configureCollectionView()
-        
+        checkIfUserIsFollowed()
+        checkUserStats()
     }
     
+    // MARK: - API
     
-    // MARK: - Helpers
-    
-    func configureCollectionView() {
-        navigationItem.title = user.username
-        collectionView.backgroundColor = .white
-        collectionView.register(ProfileCell.self,
-                                forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.register(ProfileHeader.self,
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: headerIdentifier)
-        
+    func checkIfUserIsFollowed() {
+        UserService.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+            self.collectionView.reloadData()
+        }
     }
     
+    func checkUserStats() {
+        UserService.fetchuserStats(uid: user.uid, completion: { stast in
+            self.user.stast = stast
+            self.collectionView.reloadData()
+        })
+    }
+
+
+// MARK: - Helpers
+
+func configureCollectionView() {
+    navigationItem.title = user.username
+    collectionView.backgroundColor = .white
+    collectionView.register(ProfileCell.self,
+                            forCellWithReuseIdentifier: cellIdentifier)
+    collectionView.register(ProfileHeader.self,
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                            withReuseIdentifier: headerIdentifier)
+
+
+}
 }
 
 // MARK: - UICollectionViewDataSource
@@ -67,7 +84,7 @@ extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as? ProfileHeader else { return UICollectionReusableView() }
-        
+        header.delegate = self
         header.viewModel = ProfileHeaderViewModel(user: user)
         return header
     }
@@ -101,3 +118,22 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
 }
 
 
+// MARK: - ProfileHeaderDelegate
+
+extension ProfileController: ProfileHeaderDelegate {
+    func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User) {
+        if user.isCurrentUser {
+            
+        } else if user.isFollowed {
+            UserService.unfollow(uid: user.uid) { error in
+                self.user.isFollowed = false
+                self.collectionView.reloadData()
+            }
+        } else {
+            UserService.follow(uid: user.uid) { error in
+                self.user.isFollowed = true
+                self.collectionView.reloadData()
+            }
+        }
+    }
+}
