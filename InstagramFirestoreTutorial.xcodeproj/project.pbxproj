@@ -25,6 +25,7 @@
 		576ABD1A2894462B00F01C44 /* CommentInputAcessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD192894462B00F01C44 /* CommentInputAcessoryView.swift */; };
 		576ABD1C28944CFA00F01C44 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD1B28944CFA00F01C44 /* CommentService.swift */; };
 		576ABD1E28944F0300F01C44 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD1D28944F0300F01C44 /* Comment.swift */; };
+		576ABD202894512E00F01C44 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD1F2894512E00F01C44 /* CommentViewModel.swift */; };
 		576D78D12886A3C800321B39 /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D78D02886A3C800321B39 /* UploadPostController.swift */; };
 		5776E21A2834518C00B558AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E2192834518C00B558AA /* CustomButton.swift */; };
 		5776E21C283454DC00B558AA /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */; };
@@ -70,6 +71,7 @@
 		576ABD192894462B00F01C44 /* CommentInputAcessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAcessoryView.swift; sourceTree = "<group>"; };
 		576ABD1B28944CFA00F01C44 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		576ABD1D28944F0300F01C44 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		576ABD1F2894512E00F01C44 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		576D78D02886A3C800321B39 /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		5776E2192834518C00B558AA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				570A100828577F4F00440A4F /* ProfileHeaderViewModel.swift */,
 				5764CDE42859FC0F002412EF /* UserCellViewModel.swift */,
 				576ABD132893FC8900F01C44 /* PostViewModel.swift */,
+				576ABD1F2894512E00F01C44 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				574F647B2892D6E3000A34F1 /* InputTextView.swift in Sources */,
 				5764CDE32859F0BD002412EF /* UserCell.swift in Sources */,
 				57FB728E282B10CB00C12FD3 /* FeedController.swift in Sources */,
+				576ABD202894512E00F01C44 /* CommentViewModel.swift in Sources */,
 				5764CDE52859FC0F002412EF /* UserCellViewModel.swift in Sources */,
 				57FB7296282B10F000C12FD3 /* ProfileController.swift in Sources */,
 				57FB728C282B0F7C00C12FD3 /* MainTabController.swift in Sources */,
