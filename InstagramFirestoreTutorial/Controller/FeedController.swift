@@ -39,6 +39,12 @@ class FeedController: UICollectionViewController {
         }
     }
     
+    @objc func handleRefresh() {
+        posts.removeAll()
+        collectionView?.refreshControl?.endRefreshing()
+        fetchPosts()
+    }
+    
     // MARK: - API
     
     func fetchPosts() {
@@ -63,6 +69,10 @@ class FeedController: UICollectionViewController {
                                                             action: #selector(handleLogout))
         
         navigationItem.title = "Feed"
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refresher
     }
     
 }

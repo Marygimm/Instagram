@@ -23,7 +23,7 @@ class FeedCell: UICollectionViewCell {
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
-        imageView.image = #imageLiteral(resourceName: "venom-7")
+        imageView.backgroundColor = .lightGray
         return imageView
     }()
     
@@ -146,7 +146,7 @@ class FeedCell: UICollectionViewCell {
         guard let viewModel = viewModel else { return }
         captionLabel.text = viewModel.caption
         postImageView.sd_setImage(with: viewModel.imageUrl)
-        likesLabel.text = viewModel.likes
+        likesLabel.text = viewModel.likesLabelText
         
         profileImageView.sd_setImage(with: viewModel.profileUserUrl)
         usernameButton.setTitle(viewModel.username, for: .normal)

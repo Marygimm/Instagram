@@ -26,8 +26,13 @@ struct PostViewModel {
         return post.caption
     }
     
-    var likes: String {
-        return "\(post.likes) likes"
+    var likes: Int {
+        return post.likes
+    }
+    
+    var likesLabelText: String {
+        let formatToUse = likes != 1 ? "%@ likes" : "%@ like"
+       return String(format: formatToUse, "\(likes)")
     }
     
     init(post: Post) {
