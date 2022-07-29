@@ -73,7 +73,7 @@ class LoginController: UIViewController {
     }
     
     @objc func handleLogin() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        guard let email = emailTextField.text?.lowercased(), let password = passwordTextField.text else { return }
         AuthService.logUserIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("DEBUG: failed to log user in\(error.localizedDescription)")
