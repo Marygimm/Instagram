@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FeedCell: UICollectionViewCell {
     
     // MARK: - Properties
+    
+    var viewModel: PostViewModel? {
+        didSet {
+            configure()
+        }
+    }
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -23,7 +30,6 @@ class FeedCell: UICollectionViewCell {
     private lazy var usernameButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("venom", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         button.addTarget(self, action: #selector(didTapUsername), for: .touchUpInside)
         return button
@@ -61,7 +67,6 @@ class FeedCell: UICollectionViewCell {
     
     private lazy var likesLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 like"
         label.font = UIFont.boldSystemFont(ofSize: 13)
         return label
     }()
@@ -69,7 +74,6 @@ class FeedCell: UICollectionViewCell {
     
     private lazy var captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some test caption for now..."
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
@@ -136,6 +140,17 @@ class FeedCell: UICollectionViewCell {
     func configureActionButtons(){
         addSubview(stackView)
         stackView.anchor(top: postImageView.bottomAnchor, width: 120, height: 50)
+    }
+    
+    func configure() {
+        guard let viewModel = viewModel else { return }
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+        likesLabel.text = viewModel.likes
+        
+        profileImageView.sd_setImage(with: viewModel.profileUserUrl)
+        usernameButton.setTitle(viewModel.username, for: .normal)
+        
     }
     
 

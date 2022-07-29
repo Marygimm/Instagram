@@ -11,7 +11,7 @@ class InputTextView: UITextView {
     
     // MARK: - Properties
     
-    private var placeHolderText: String? {
+    var placeHolderText: String? {
         didSet { placeholderLabel.text = placeHolderText }
     }
     

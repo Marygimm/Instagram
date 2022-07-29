@@ -18,6 +18,8 @@
 		574F647D2892E560000A34F1 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574F647C2892E560000A34F1 /* PostService.swift */; };
 		5764CDE32859F0BD002412EF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764CDE22859F0BD002412EF /* UserCell.swift */; };
 		5764CDE52859FC0F002412EF /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764CDE42859FC0F002412EF /* UserCellViewModel.swift */; };
+		576ABD122893F99B00F01C44 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD112893F99B00F01C44 /* Post.swift */; };
+		576ABD142893FC8900F01C44 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576ABD132893FC8900F01C44 /* PostViewModel.swift */; };
 		576D78D12886A3C800321B39 /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D78D02886A3C800321B39 /* UploadPostController.swift */; };
 		5776E21A2834518C00B558AA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E2192834518C00B558AA /* CustomButton.swift */; };
 		5776E21C283454DC00B558AA /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */; };
@@ -56,6 +58,8 @@
 		574F647C2892E560000A34F1 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		5764CDE22859F0BD002412EF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5764CDE42859FC0F002412EF /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		576ABD112893F99B00F01C44 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		576ABD132893FC8900F01C44 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		576D78D02886A3C800321B39 /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		5776E2192834518C00B558AA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				5776E21B283454DC00B558AA /* AuthenticationViewModel.swift */,
 				570A100828577F4F00440A4F /* ProfileHeaderViewModel.swift */,
 				5764CDE42859FC0F002412EF /* UserCellViewModel.swift */,
+				576ABD132893FC8900F01C44 /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				570A10062857608900440A4F /* User.swift */,
+				576ABD112893F99B00F01C44 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576ABD142893FC8900F01C44 /* PostViewModel.swift in Sources */,
 				574DF6D7282E6889005AD278 /* CustomTextField.swift in Sources */,
 				570A100528575F3300440A4F /* Constants.swift in Sources */,
 				57FB7274282B0E7800C12FD3 /* ViewController.swift in Sources */,
@@ -361,6 +368,7 @@
 				57AB0701282D33E4009ADE8B /* LoginController.swift in Sources */,
 				576D78D12886A3C800321B39 /* UploadPostController.swift in Sources */,
 				57AB06FC282D27C1009ADE8B /* FeedCell.swift in Sources */,
+				576ABD122893F99B00F01C44 /* Post.swift in Sources */,
 				5776E21C283454DC00B558AA /* AuthenticationViewModel.swift in Sources */,
 				57FB7292282B10E000C12FD3 /* ImageSelectorController.swift in Sources */,
 				570A1000285753E000440A4F /* ProfileHeader.swift in Sources */,

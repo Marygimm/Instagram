@@ -10,12 +10,19 @@ import Firebase
 
 
 class FeedController: UICollectionViewController {
+    // MARK: - Properties
+    
     private let reuseIdentifier = "Cell"
+    
+    private var posts = [Post]()
+    
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchPosts()
     }
     
     // MARK: - Actions
@@ -31,6 +38,16 @@ class FeedController: UICollectionViewController {
             print("DEBUG: failed to sign out")
         }
     }
+    
+    // MARK: - API
+    
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+        }
+    }
+
     
 
     
@@ -54,12 +71,12 @@ class FeedController: UICollectionViewController {
 
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? FeedCell else { return UICollectionViewCell() }
-        
+        cell.viewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
 }

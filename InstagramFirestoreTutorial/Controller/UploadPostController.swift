@@ -17,6 +17,8 @@ class UploadPostController: UIViewController {
     
     weak var delegate: UploadPostControllerDelegate?
     
+    var currentUser: User?
+    
     var selectedImage: UIImage? {
         didSet { photoImageView.image = selectedImage }
     }
@@ -31,7 +33,7 @@ class UploadPostController: UIViewController {
     
     private lazy var captionTextView: InputTextView = {
         let textView = InputTextView()
-        textView.text = "Enter caption..."
+        textView.placeHolderText = "Enter caption..."
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.delegate = self
         return textView
@@ -61,8 +63,11 @@ class UploadPostController: UIViewController {
     }
     
     @objc func didTapDone() {
-        guard let image = selectedImage, let caption = captionTextView.text else { return }
-        PostService.uploadPost(caption: caption, image: image) { error in
+        guard let image = selectedImage, let caption = captionTextView.text, let user = currentUser else { return }
+        showLoader(true)
+        PostService.uploadPost(caption: caption, image: image, user: user) { error in
+            self.showLoader(false)
+            
             if let error = error {
                 print("DEBUG: FAILED TO UPLOAD PHOTO")
                 return
