@@ -42,7 +42,9 @@ struct ProfileHeaderViewModel {
     }
     
     var numberOfPosts: NSAttributedString {
-        return attributedStatText(value: 9, label: "posts")
+        let numberOfPosts = user.stast.posts
+        let textToUser = numberOfPosts != 1 ? "posts" : "post"
+        return attributedStatText(value: numberOfPosts, label: textToUser)
     }
     
     

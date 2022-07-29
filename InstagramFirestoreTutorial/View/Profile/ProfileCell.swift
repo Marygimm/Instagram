@@ -10,6 +10,11 @@ import UIKit
 class ProfileCell: UICollectionViewCell {
     // MARK: - Properties
     
+    var viewModel: PostViewModel? {
+        didSet {
+            configure()
+        }
+    }
     private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "venom-7")
@@ -31,6 +36,17 @@ class ProfileCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Actions
+
+    func configure() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+
     }
     
 }
