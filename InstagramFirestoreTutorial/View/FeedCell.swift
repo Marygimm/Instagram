@@ -8,9 +8,15 @@
 import UIKit
 import SDWebImage
 
+protocol FeedCellDelegate: AnyObject {
+    func cell(_ cell: FeedCell, wantToShowCommentsFor post: Post)
+}
+
 class FeedCell: UICollectionViewCell {
     
     // MARK: - Properties
+    
+    weak var delegate: FeedCellDelegate?
     
     var viewModel: PostViewModel? {
         didSet {
@@ -55,6 +61,7 @@ class FeedCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "comment"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         return button
     }()
     
@@ -133,6 +140,14 @@ class FeedCell: UICollectionViewCell {
     @objc
     func didTapUsername(){
         print("DEBUG: did tap username")
+    }
+    
+    @objc
+    func didTapComments() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        delegate?.cell(self, wantToShowCommentsFor: viewModel.post)
     }
     
     // MARK: - Helpers
