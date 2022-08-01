@@ -10,6 +10,7 @@ import SDWebImage
 
 protocol FeedCellDelegate: AnyObject {
     func cell(_ cell: FeedCell, wantToShowCommentsFor post: Post)
+    func cell(_ cell: FeedCell, didLike post: Post)
 }
 
 class FeedCell: UICollectionViewCell {
@@ -50,10 +51,11 @@ class FeedCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var likeButton: UIButton = {
+    lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "like_unselected"), for: .normal)
-        button.tintColor = .black
+//        button.setImage(UIImage(named: "like_unselected"), for: .normal)
+//        button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
     }()
     
@@ -143,6 +145,14 @@ class FeedCell: UICollectionViewCell {
     }
     
     @objc
+    func didTapLike(){
+        guard let viewModel = viewModel else {
+            return
+        }
+        delegate?.cell(self, didLike: viewModel.post)
+    }
+    
+    @objc
     func didTapComments() {
         guard let viewModel = viewModel else {
             return
@@ -165,6 +175,9 @@ class FeedCell: UICollectionViewCell {
         
         profileImageView.sd_setImage(with: viewModel.profileUserUrl)
         usernameButton.setTitle(viewModel.username, for: .normal)
+        
+        likeButton.tintColor = viewModel.likeButtonTintColor
+        likeButton.setImage(viewModel.likeButtonImage, for: .normal)
         
     }
     
