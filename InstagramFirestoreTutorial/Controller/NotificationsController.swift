@@ -82,7 +82,11 @@ extension NotificationsController {
 
 extension NotificationsController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let uid = notifications[indexPath.row].uid
+        UserService.fetchUser(withUid: uid) { user in
+            let controller = ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
 
