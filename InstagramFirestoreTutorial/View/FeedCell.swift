@@ -49,7 +49,7 @@ class FeedCell: UICollectionViewCell {
     
     private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
         imageView.image = #imageLiteral(resourceName: "venom-7")
