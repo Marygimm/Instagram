@@ -92,7 +92,6 @@ class FeedCell: UICollectionViewCell {
     
     private lazy var postimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 days ago"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .lightGray
         return label
@@ -185,6 +184,8 @@ class FeedCell: UICollectionViewCell {
         
         likeButton.tintColor = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
+        
+        postimeLabel.text = viewModel.timestampString
         
     }
     

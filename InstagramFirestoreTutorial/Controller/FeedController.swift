@@ -20,7 +20,11 @@ class FeedController: UICollectionViewController {
         }
     }
     
-    var post: Post?
+    var post: Post? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     
     // MARK: - Lifecycle
@@ -29,6 +33,10 @@ class FeedController: UICollectionViewController {
         super.viewDidLoad()
         configureUI()
         fetchPosts()
+        
+        if post != nil {
+            checkIfUserLikedPost()
+        }
     }
     
     // MARK: - Actions
@@ -55,7 +63,7 @@ class FeedController: UICollectionViewController {
     
     func fetchPosts() {
         guard post == nil else { return }
-        PostService.fetchPosts { posts in
+        PostService.fetchFeedPosts { posts in
             self.posts = posts
             self.collectionView.refreshControl?.endRefreshing()
             self.checkIfUserLikedPost()
@@ -63,10 +71,17 @@ class FeedController: UICollectionViewController {
     }
     
     func checkIfUserLikedPost() {
-        self.posts.forEach { post in
+        
+        if let post = post {
             PostService.checkIfUserLikedPost(post: post) { didLike in
-                if let index = self.posts.firstIndex(where: { $0.postId == post.postId }) {
-                    self.posts[index].didLike = didLike
+                self.post?.didLike = didLike
+            }
+        } else {
+            posts.forEach { post in
+                PostService.checkIfUserLikedPost(post: post) { didLike in
+                    if let index = self.posts.firstIndex(where: { $0.postId == post.postId }) {
+                        self.posts[index].didLike = didLike
+                    }
                 }
             }
         }
@@ -109,7 +124,7 @@ extension FeedController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? FeedCell else { return UICollectionViewCell() }
         
         cell.delegate = self
-    
+        
         if let post = post {
             cell.viewModel = PostViewModel(post: post)
         } else {
